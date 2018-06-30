@@ -106,7 +106,7 @@ export declare abstract class AbstractControl<T> {
 
   abstract setValue(value: T, options?: Object): void;
 
-  abstract patchValue(value: Partial<T>, options?: Object): void;
+  abstract patchValue(value: Partial<T> | T, options?: Object): void;
 
   abstract reset(value?: T, options?: Object): void;
 
@@ -207,7 +207,7 @@ export declare class FormGroup<T> extends AbstractControl<T> {
     emitEvent?: boolean;
   }): void;
 
-  patchValue(value: Partial<T>, options?: {
+  patchValue(value: Partial<T> | T, options?: {
     onlySelf?: boolean;
     emitEvent?: boolean;
   }): void;
@@ -232,7 +232,7 @@ export declare class FormControl<T> extends AbstractControl<T> {
     emitViewToModelChange?: boolean;
   }): void;
 
-  patchValue(value: Partial<T>, options?: {
+  patchValue(value: Partial<T> | T, options?: {
     onlySelf?: boolean;
     emitEvent?: boolean;
     emitModelToViewChange?: boolean;
